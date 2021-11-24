@@ -1,0 +1,15 @@
+{% extends 'flatpages/default.html' %}
+
+{% block menu %}
+<h3> <a href="sign/logout/">Выйти</a> </h3>
+{% endblock %}
+
+{% block content %}
+<h2>Страница авторизованного пользователя {{request.user.username}}</h2>
+{% if is_not_author %}
+    <div> <a href="sign/upgrade/"> Стать автором!</a> </div>
+    <h4>Авторы могут добавлять свои статьи/новости, а также их редактировать</h4>
+{% endif %}    
+<button>  <a href="news/">Перейти ко всем статьям</a> </button>
+
+{% endblock %}
